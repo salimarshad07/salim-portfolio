@@ -7,7 +7,7 @@ const ME = {
   location: "West Bengal, India",
   github: "https://github.com/salimarshad07",
   linkedin: "https://www.linkedin.com/in/salim-arshad",
-  email: "salim.arshad07@gmail.com",
+  email: "salim.arshad1515@gmail.com",
 };
 
 const PROJECTS = [
@@ -71,9 +71,18 @@ function FeedbackForm() {
   const submit = async () => {
     if (!form.message.trim()) return;
     setLoading(true);
-    await new Promise(r => setTimeout(r, 800));
+    try {
+      const res = await fetch("https://formspree.io/f/xdajvvan", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({ name: form.name, email: form.email, type: form.type, message: form.message }),
+      });
+      if (res.ok) { setSubmitted(true); }
+      else { alert("Something went wrong. Please email me directly at salim.arshad01@outlook.com"); }
+    } catch {
+      alert("Something went wrong. Please email me directly at salim.arshad01@outlook.com");
+    }
     setLoading(false);
-    setSubmitted(true);
   };
   if (submitted) return (
     <div className="form-success">
