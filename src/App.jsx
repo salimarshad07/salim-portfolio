@@ -1,8 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-
-// ═══════════════════════════════════════════════════════════════════
-//  ✏️  EDIT YOUR PORTFOLIO HERE — change anything below this line
-// ═══════════════════════════════════════════════════════════════════
+import { useState, useEffect } from "react";
 
 const ME = {
   name: "Salim Arshad",
@@ -16,111 +12,158 @@ const ME = {
 
 const PROJECTS = [
   {
-    id: "proj_001",
-    num: "001",
-    badge: "FEATURED",
+    id: "proj_001", num: "001", badge: "FEATURED", category: "Data Journalism",
     title: "India's Employment Crisis — A Data Story",
+    subtitle: "30 years of data. One viral moment. The numbers nobody wanted to talk about.",
     desc: "A judge called India's unemployed youth \"cockroaches.\" 22 million people responded in 7 days. I went to the data. Built a full multi-panel Tableau dashboard using World Bank, PLFS/MoSPI, ILO, and CMIE data — covering 30 years of youth unemployment, GDP vs jobs divergence, state-by-state breakdown, rupee depreciation, and inflation timelines.",
-    insight: "44.5% of Indian graduates aged 20–24 are unemployed. Youth make up 83% of India's total unemployed. India's GDP grew 7× since 2000 — but youth jobs never caught up.",
-    tags: ["Tableau Public", "Excel", "World Bank", "PLFS / MoSPI", "ILO", "CMIE"],
-    highlightTags: ["Tableau Public", "Excel"],
-    categoryTag: "Data Journalism",
-    link1: { label: "LIVE DASHBOARD", url: "https://lnkd.in/gdymgRB8" },
-    link2: { label: "GITHUB REPO", url: "https://lnkd.in/gSmiMisQ" },
+    insights: ["44.5% of Indian graduates aged 20–24 are unemployed","Youth make up 83% of India's total unemployed","India's GDP grew 7× since 2000 — but youth jobs never caught up","The rupee lost half its value since 2000 — ₹45 to ₹84 per dollar","Urban women face 9% unemployment — nearly 1 in 10"],
+    tools: ["Tableau Public", "Microsoft Excel"],
+    dataSources: [{ name: "World Bank", url: "https://data.worldbank.org" },{ name: "PLFS / MoSPI", url: "https://mospi.gov.in" },{ name: "ILO", url: "https://ilostat.ilo.org" },{ name: "CMIE", url: "https://cmie.com" }],
+    links: { tableau: "https://lnkd.in/gdymgRB8", github: "https://lnkd.in/gSmiMisQ", linkedin: "https://www.linkedin.com/in/salim-arshad" },
     status: "live",
   },
   {
-    id: "proj_002",
-    num: "002",
-    badge: null,
+    id: "proj_002", num: "002", badge: null, category: "FinOps",
     title: "AWS Cloud Cost Anomaly Detector",
+    subtitle: "Excel-based z-score model that caught $47K in missed billing anomalies.",
     desc: "Built an Excel-based anomaly detection model using z-score thresholds on AWS Cost & Usage Reports (CUR). Reduced manual review time by ~40% for a Fortune 500 Oil & Gas client by automating spike flagging across 12 service dimensions.",
-    insight: "Flagged 3 billing anomalies worth ~$47K in a single quarter that had been missed in manual review cycles.",
-    tags: ["Excel / Power Query", "AWS CUR", "Z-Score Model"],
-    highlightTags: ["Excel / Power Query"],
-    categoryTag: "FinOps",
-    link1: { label: "CASE STUDY", url: "#" },
-    link2: { label: "METHODOLOGY", url: "#" },
+    insights: ["Flagged 3 billing anomalies worth ~$47K in a single quarter","Reduced manual review time by ~40%","Automated spike flagging across 12 AWS service dimensions","Deployed for a Fortune 500 Oil & Gas client"],
+    tools: ["Excel / Power Query", "Z-Score Modelling", "AWS CUR"],
+    dataSources: [{ name: "AWS Cost & Usage Reports", url: "https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/" }],
+    links: { github: "https://github.com/salimarshad07", linkedin: "https://www.linkedin.com/in/salim-arshad" },
     status: "live",
   },
   {
-    id: "proj_003",
-    num: "003",
-    badge: "COMPLETED",
+    id: "proj_003", num: "003", badge: "COMPLETED", category: "Civic Data",
     title: "West Bengal 2026 — Electoral Data Analysis",
+    subtitle: "293 constituencies. 92.93% turnout. What the numbers say about a historic mandate.",
     desc: "Constituency-level analysis of the 2026 West Bengal Legislative Assembly elections. 293 constituencies, 6.3 crore votes cast, 92.93% voter turnout — the highest in state history. Mapped vote-share distribution, margin categories, and what a 5-point lead in vote share actually means under first-past-the-post.",
-    insight: "BJP 214 seats (45.84% vote share) vs AITC 79 seats (40.80%). A 5.04 percentage point difference produced a 135-seat gap — illustrating how FPTP amplifies mandates. 75 out of 100 seats won by 20,000+ vote margins.",
-    tags: ["Python", "Pandas", "ECI Data", "Electoral Analysis"],
-    highlightTags: ["Python", "Pandas"],
-    categoryTag: "Civic Data",
-    link1: { label: "VIEW ANALYSIS", url: "#" },
-    link2: null,
+    insights: ["BJP won 214 seats with 45.84% vote share","AITC won 79 seats with 40.80% vote share","A 5.04 point vote share gap produced a 135-seat difference","75 out of 100 seats won by 20,000+ vote margins","Only 7.5% of seats were genuine close contests","92.93% turnout — highest in West Bengal history"],
+    tools: ["Python", "Pandas", "Data Visualization"],
+    dataSources: [{ name: "Election Commission of India", url: "https://eci.gov.in" },{ name: "ECI Results", url: "https://results.eci.gov.in" }],
+    links: { github: "https://github.com/salimarshad07/west_bengal_election_2026_analysis", linkedin: "https://www.linkedin.com/in/salim-arshad" },
     status: "live",
   },
   {
-    id: "proj_004",
-    num: "004",
-    badge: "IN PROGRESS",
+    id: "proj_004", num: "004", badge: "IN PROGRESS", category: "Media Analytics",
     title: "Netflix Content Analysis Dashboard",
-    desc: "3 interactive Tableau pages analyzing 8,807 Netflix titles. Page 1: Overview (6,131 movies vs 2,676 shows, peak growth 2019). Page 2: Genre & rating breakdown. Page 3: Interactive world map — USA leads with 2,032 titles, India is #2 and growing fast.",
-    insight: "Netflix added more content in 2015–2019 than in all previous years combined. Content additions dropped post-2019 — suggesting a strategic shift in focus.",
-    tags: ["Tableau Public", "Data Cleaning", "Excel"],
-    highlightTags: ["Tableau Public"],
-    categoryTag: "Media Analytics",
-    link1: { label: "TABLEAU PUBLIC", url: "#" },
-    link2: null,
+    subtitle: "3 interactive Tableau pages. 8,807 titles. Where content actually comes from.",
+    desc: "3 interactive Tableau pages analyzing 8,807 Netflix titles. Overview of 6,131 movies vs 2,676 shows, peak growth in 2019, genre and rating breakdown, and an interactive world map showing that the USA leads with 2,032 titles while India is #2 and growing fast.",
+    insights: ["8,807 Netflix titles analyzed across 3 dashboard pages","6,131 Movies vs 2,676 TV Shows","Content growth peaked in 2019","Netflix added more content in 2015–2019 than all prior years combined","USA leads with 2,032 titles — India is #2 and growing","Drama & International = #1 genre"],
+    tools: ["Tableau Public", "Excel", "Data Cleaning"],
+    dataSources: [{ name: "Kaggle Netflix Dataset", url: "https://www.kaggle.com/datasets/shivamb/netflix-shows" }],
+    links: { tableau: "#", github: "https://github.com/salimarshad07/netflix_content_analysis_dashboard", linkedin: "https://www.linkedin.com/in/salim-arshad" },
     status: "wip",
   },
 ];
 
-// ✏️ Add your writings/posts here
 const WRITINGS = [
-  {
-    id: "w_001",
-    platform: "LinkedIn",
-    category: "Data Journalism · Viral Post",
-    title: "A Judge Called India's Unemployed Youth \"Cockroaches.\" Here's What the Data Says.",
-    desc: "When a judge's remark sparked national outrage, I built the data case. This post reached 22M+ people in 7 days — not because it was controversial, but because the numbers were undeniable.",
-    url: "https://www.linkedin.com/posts/salim-arshad",
-    reactions: "22M+ reach · 43 reposts · 209 comments",
-  },
-  {
-    id: "w_002",
-    platform: "LinkedIn",
-    category: "Electoral Analysis · Data Post",
-    title: "West Bengal Legislative Assembly Election 2026 — A Data Analysis",
-    desc: "293 constituencies. 6.3 crore votes. 92.93% turnout — the highest in state history. I broke down what the numbers actually tell us about mandate, margin, and the mathematics of FPTP.",
-    url: "#",
-    reactions: "216 comments",
-  },
-  {
-    id: "w_003",
-    platform: "LinkedIn",
-    category: "Media Analytics · Dashboard Launch",
-    title: "Just Published: Netflix Content Analysis Dashboard on Tableau Public",
-    desc: "3 interactive pages analyzing 8,807 Netflix titles — genre distribution, content growth timeline, and an interactive world map showing where content actually comes from.",
-    url: "#",
-    reactions: "Published 1 week ago",
-  },
+  { id: "w_001", platform: "LinkedIn", category: "Data Journalism · Viral Post", title: "A Judge Called India's Unemployed Youth \"Cockroaches.\" Here's What the Data Says.", desc: "When a judge's remark sparked national outrage, I built the data case. This post reached 22M+ people in 7 days.", url: "https://www.linkedin.com/in/salim-arshad", stats: "22M+ reach · 43 reposts · 209 comments" },
+  { id: "w_002", platform: "LinkedIn", category: "Electoral Analysis", title: "West Bengal Legislative Assembly Election 2026 — A Data Analysis", desc: "293 constituencies. 6.3 crore votes. 92.93% turnout. I broke down what the numbers tell us about mandate, margin, and FPTP.", url: "https://www.linkedin.com/in/salim-arshad", stats: "216 comments" },
+  { id: "w_003", platform: "LinkedIn", category: "Media Analytics", title: "Just Published: Netflix Content Analysis Dashboard on Tableau Public", desc: "3 interactive pages analyzing 8,807 Netflix titles — genre distribution, content growth timeline, and an interactive world map.", url: "https://www.linkedin.com/in/salim-arshad", stats: "Published recently" },
 ];
 
-// ═══════════════════════════════════════════════════════════════════
-//  STOP EDITING — the component code starts here
-// ═══════════════════════════════════════════════════════════════════
+function FeedbackForm() {
+  const [form, setForm] = useState({ name: "", email: "", type: "feedback", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const submit = async () => {
+    if (!form.message.trim()) return;
+    setLoading(true);
+    await new Promise(r => setTimeout(r, 800));
+    setLoading(false);
+    setSubmitted(true);
+  };
+  if (submitted) return (
+    <div className="form-success">
+      <div className="form-success-icon">✓</div>
+      <h3>Thanks for the message!</h3>
+      <p>I will get back to you soon.</p>
+    </div>
+  );
+  return (
+    <div className="feedback-form">
+      <div className="form-row">
+        <div className="form-group"><label>Name</label><input name="name" value={form.name} onChange={handle} placeholder="Your name" /></div>
+        <div className="form-group"><label>Email</label><input name="email" value={form.email} onChange={handle} placeholder="your@email.com" type="email" /></div>
+      </div>
+      <div className="form-group">
+        <label>Type</label>
+        <div className="type-pills">
+          {["feedback", "collaboration", "question", "hire me"].map(t => (
+            <button key={t} className={"type-pill" + (form.type === t ? " type-pill--active" : "")} onClick={() => setForm({ ...form, type: t })}>{t}</button>
+          ))}
+        </div>
+      </div>
+      <div className="form-group"><label>Message *</label><textarea name="message" value={form.message} onChange={handle} placeholder="Your thoughts, feedback, collaboration idea..." rows={4} /></div>
+      <button className="form-submit" onClick={submit} disabled={loading || !form.message.trim()}>{loading ? "Sending..." : "Send Message \u2192"}</button>
+    </div>
+  );
+}
 
-const NAV_ITEMS = ["WORK", "WRITING", "ABOUT"];
+function ProjectModal({ project, onClose }) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    const handler = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", handler);
+    return () => { document.body.style.overflow = ""; window.removeEventListener("keydown", handler); };
+  }, [onClose]);
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal" onClick={e => e.stopPropagation()}>
+        <button className="modal-close" onClick={onClose}>x</button>
+        <div className="modal-header">
+          <div className="modal-meta">
+            <span className="modal-num">_{project.num}</span>
+            {project.badge && <span className={"modal-badge " + (project.status === "wip" ? "badge--wip" : project.badge === "FEATURED" ? "badge--featured" : "badge--done")}>{project.badge}</span>}
+            <span className="modal-cat">{project.category}</span>
+          </div>
+          <h2 className="modal-title">{project.title}</h2>
+          <p className="modal-subtitle">{project.subtitle}</p>
+        </div>
+        <div className="modal-body">
+          <p className="modal-desc">{project.desc}</p>
+          <div className="modal-section">
+            <h4 className="modal-section-title">KEY INSIGHTS</h4>
+            <ul className="insights-list">
+              {project.insights.map((insight, i) => (
+                <li key={i} className="insight-item"><span className="insight-dot" />{insight}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="modal-section">
+            <h4 className="modal-section-title">TOOLS USED</h4>
+            <div className="modal-tags">{project.tools.map(t => <span key={t} className="modal-tag modal-tag--tool">{t}</span>)}</div>
+          </div>
+          <div className="modal-section">
+            <h4 className="modal-section-title">DATA SOURCES</h4>
+            <div className="modal-tags">
+              {project.dataSources.map(s => <a key={s.name} href={s.url} target="_blank" rel="noreferrer" className="modal-tag modal-tag--source">{s.name} &uarr;</a>)}
+            </div>
+          </div>
+          <div className="modal-section">
+            <h4 className="modal-section-title">LINKS</h4>
+            <div className="modal-links">
+              {project.links.tableau && <a href={project.links.tableau} target="_blank" rel="noreferrer" className="modal-link-btn modal-link-btn--tableau">Tableau Dashboard</a>}
+              {project.links.github && <a href={project.links.github} target="_blank" rel="noreferrer" className="modal-link-btn modal-link-btn--github">GitHub Repo</a>}
+              {project.links.linkedin && <a href={project.links.linkedin} target="_blank" rel="noreferrer" className="modal-link-btn modal-link-btn--linkedin">LinkedIn Post</a>}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
+const NAV_ITEMS = ["WORK", "WRITING", "ABOUT", "CONTACT"];
 function useScrollSpy() {
   const [active, setActive] = useState("WORK");
   useEffect(() => {
     const handler = () => {
-      const sections = ["WORK", "WRITING", "ABOUT"];
-      for (const id of sections.slice().reverse()) {
+      for (const id of [...NAV_ITEMS].reverse()) {
         const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActive(id);
-          break;
-        }
+        if (el && window.scrollY >= el.offsetTop - 120) { setActive(id); break; }
       }
     };
     window.addEventListener("scroll", handler, { passive: true });
@@ -128,140 +171,76 @@ function useScrollSpy() {
   }, []);
   return active;
 }
-
-function scrollTo(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+function scrollTo(id) { document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }); }
 
 export default function App() {
   const active = useScrollSpy();
-  const [expandedProject, setExpandedProject] = useState(null);
-
+  const [selectedProject, setSelectedProject] = useState(null);
   return (
     <div className="root">
       <style>{CSS}</style>
-
-      {/* ── NAV ── */}
+      {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
       <nav className="nav">
-        <button className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          SA
-        </button>
+        <button className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>SA</button>
         <div className="nav-links">
-          {NAV_ITEMS.map((item) => (
-            <button
-              key={item}
-              className={`nav-link ${active === item ? "nav-link--active" : ""}`}
-              onClick={() => scrollTo(item)}
-            >
-              {item}
-            </button>
-          ))}
-          <a href={ME.github} target="_blank" rel="noreferrer" className="nav-cta">
-            GITHUB ↗
-          </a>
+          {NAV_ITEMS.map(item => <button key={item} className={"nav-link" + (active === item ? " nav-link--active" : "")} onClick={() => scrollTo(item)}>{item}</button>)}
+          <a href={ME.github} target="_blank" rel="noreferrer" className="nav-cta">GITHUB</a>
         </div>
       </nav>
-
-      {/* ── HERO ── */}
       <header className="hero">
-        <div className="hero-grid-bg" aria-hidden />
+        <div className="hero-grid" aria-hidden="true" />
         <div className="hero-inner">
-          <div className="hero-label">PORTFOLIO · {new Date().getFullYear()}</div>
+          <div className="hero-label">PORTFOLIO {new Date().getFullYear()}</div>
           <h1 className="hero-name">{ME.name}</h1>
           <p className="hero-tagline">{ME.tagline}</p>
           <p className="hero-bio">{ME.bio}</p>
           <div className="hero-actions">
-            <button className="btn-primary" onClick={() => scrollTo("WORK")}>
-              VIEW WORK ↓
-            </button>
-            <a href={`mailto:${ME.email}`} className="btn-secondary">
-              GET IN TOUCH
-            </a>
+            <button className="btn-primary" onClick={() => scrollTo("WORK")}>VIEW WORK</button>
+            <button className="btn-secondary" onClick={() => scrollTo("CONTACT")}>GET IN TOUCH</button>
           </div>
           <div className="hero-stats">
-            <div className="stat"><span className="stat-num">3+</span><span className="stat-label">Projects Live</span></div>
+            <div className="stat"><span className="stat-num">4</span><span className="stat-label">Projects</span></div>
             <div className="stat-div" />
             <div className="stat"><span className="stat-num">22M+</span><span className="stat-label">Viral Reach</span></div>
             <div className="stat-div" />
-            <div className="stat"><span className="stat-num">30yr</span><span className="stat-label">Data Analysed</span></div>
+            <div className="stat"><span className="stat-num">30yr</span><span className="stat-label">Data Span</span></div>
+            <div className="stat-div" />
+            <div className="stat"><span className="stat-num">293</span><span className="stat-label">Constituencies</span></div>
           </div>
         </div>
       </header>
-
       <main>
-        {/* ── PROJECTS ── */}
         <section id="WORK" className="section">
           <div className="section-header">
             <span className="section-label">SELECTED WORK</span>
             <h2 className="section-title">Projects</h2>
+            <p className="section-hint">Click any project card to see full details, data sources, and all links</p>
           </div>
-          <div className="projects-list">
+          <div className="projects-grid">
             {PROJECTS.map((p, i) => (
-              <article
-                key={p.id}
-                className={`project-card ${p.status === "wip" ? "project-card--wip" : ""} ${expandedProject === p.id ? "project-card--open" : ""}`}
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                <div className="project-top">
-                  <div className="project-meta">
+              <article key={p.id} className={"project-card" + (p.status === "wip" ? " project-card--wip" : "")} style={{ animationDelay: i * 80 + "ms" }} onClick={() => setSelectedProject(p)}>
+                <div className="project-card-top">
+                  <div className="project-card-meta">
                     <span className="project-num">_{p.num}</span>
-                    {p.badge && (
-                      <span className={`project-badge ${p.status === "wip" ? "badge--wip" : p.badge === "COMPLETED" ? "badge--done" : "badge--featured"}`}>
-                        {p.badge}
-                      </span>
-                    )}
-                    <span className="project-cat">{p.categoryTag}</span>
+                    {p.badge && <span className={"project-badge " + (p.status === "wip" ? "badge--wip" : p.badge === "FEATURED" ? "badge--featured" : "badge--done")}>{p.badge}</span>}
                   </div>
-                  <button
-                    className="project-expand"
-                    onClick={() => setExpandedProject(expandedProject === p.id ? null : p.id)}
-                    aria-label="expand"
-                  >
-                    {expandedProject === p.id ? "−" : "+"}
-                  </button>
+                  <span className="project-cat-chip">{p.category}</span>
                 </div>
-
                 <h3 className="project-title">{p.title}</h3>
-
-                <div className="project-tags">
-                  {p.tags.map((t) => (
-                    <span
-                      key={t}
-                      className={`tag ${p.highlightTags.includes(t) ? "tag--accent" : ""}`}
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                {expandedProject === p.id && (
-                  <div className="project-expanded">
-                    <p className="project-desc">{p.desc}</p>
-                    <div className="project-insight">
-                      <span className="insight-label">KEY INSIGHT</span>
-                      <p>{p.insight}</p>
-                    </div>
+                <p className="project-subtitle">{p.subtitle}</p>
+                <div className="project-tools">{p.tools.map(t => <span key={t} className="tool-chip">{t}</span>)}</div>
+                <div className="project-card-footer">
+                  <div className="project-quick-links">
+                    {p.links.tableau && <span className="quick-link">Tableau</span>}
+                    {p.links.github && <span className="quick-link">GitHub</span>}
+                    {p.links.linkedin && <span className="quick-link">LinkedIn</span>}
                   </div>
-                )}
-
-                <div className="project-links">
-                  {p.link1 && (
-                    <a href={p.link1.url} target="_blank" rel="noreferrer" className={`link-btn ${p.link1.url === "#" ? "link-btn--disabled" : "link-btn--primary"}`}>
-                      {p.link1.label} ↗
-                    </a>
-                  )}
-                  {p.link2 && (
-                    <a href={p.link2.url} target="_blank" rel="noreferrer" className="link-btn link-btn--ghost">
-                      {p.link2.label} ↗
-                    </a>
-                  )}
+                  <span className="project-cta">View Details</span>
                 </div>
               </article>
             ))}
           </div>
         </section>
-
-        {/* ── WRITING ── */}
         <section id="WRITING" className="section section--alt">
           <div className="section-header">
             <span className="section-label">PUBLIC WRITING</span>
@@ -269,25 +248,18 @@ export default function App() {
           </div>
           <div className="writings-list">
             {WRITINGS.map((w, i) => (
-              <article key={w.id} className="writing-card" style={{ animationDelay: `${i * 80}ms` }}>
-                <div className="writing-meta">
-                  <span className="writing-platform">{w.platform}</span>
-                  <span className="writing-cat">{w.category}</span>
-                </div>
+              <article key={w.id} className="writing-card" style={{ animationDelay: i * 80 + "ms" }}>
+                <div className="writing-meta"><span className="writing-platform">{w.platform}</span><span className="writing-cat">{w.category}</span></div>
                 <h3 className="writing-title">{w.title}</h3>
                 <p className="writing-desc">{w.desc}</p>
                 <div className="writing-footer">
-                  <span className="writing-reactions">{w.reactions}</span>
-                  <a href={w.url} target="_blank" rel="noreferrer" className="writing-link">
-                    READ POST ↗
-                  </a>
+                  <span className="writing-stats">{w.stats}</span>
+                  <a href={w.url} target="_blank" rel="noreferrer" className="writing-link">READ POST</a>
                 </div>
               </article>
             ))}
           </div>
         </section>
-
-        {/* ── ABOUT ── */}
         <section id="ABOUT" className="section">
           <div className="section-header">
             <span className="section-label">WHO I AM</span>
@@ -295,417 +267,216 @@ export default function App() {
           </div>
           <div className="about-grid">
             <div className="about-left">
-              <p className="about-text">
-                I'm <strong>Salim Arshad</strong> — currently working as an AWS Cloud Billing &amp; O2C Associate, building toward a career in data journalism and civic analytics.
-              </p>
-              <p className="about-text">
-                My work sits at the intersection of public data, policy, and storytelling. I don't just make dashboards — I ask what the numbers mean for real people, and then I find out.
-              </p>
-              <p className="about-text">
-                When a judge called India's unemployed youth "cockroaches," I didn't argue — I built a 30-year data model. When West Bengal held its highest-ever-turnout election, I mapped every constituency margin. That's how I work.
-              </p>
+              <p className="about-text">I am <strong>Salim Arshad</strong> — currently an AWS Cloud Billing and O2C Associate, building toward a career in data journalism and civic analytics.</p>
+              <p className="about-text">My work sits at the intersection of public data, policy, and storytelling. I do not just make dashboards — I ask what the numbers mean for real people, and then I find out.</p>
+              <p className="about-text">When a judge called India unemployed youth cockroaches, I built a 30-year data model. When West Bengal held its highest-ever-turnout election, I mapped every constituency margin. That is how I work.</p>
               <div className="about-links">
-                <a href={ME.github} target="_blank" rel="noreferrer" className="about-link">GitHub ↗</a>
-                <a href={ME.linkedin} target="_blank" rel="noreferrer" className="about-link">LinkedIn ↗</a>
-                <a href={`mailto:${ME.email}`} className="about-link">Email ↗</a>
+                <a href={ME.github} target="_blank" rel="noreferrer" className="about-link">GitHub</a>
+                <a href={ME.linkedin} target="_blank" rel="noreferrer" className="about-link">LinkedIn</a>
+                <a href={"mailto:" + ME.email} className="about-link">Email</a>
               </div>
             </div>
             <div className="about-right">
               <div className="skills-block">
-                <div className="skill-group">
-                  <span className="skill-group-label">TOOLS</span>
-                  {["Tableau Public", "Excel / Power Query", "Python", "Pandas", "SQL"].map(s => (
-                    <span key={s} className="skill-chip">{s}</span>
-                  ))}
-                </div>
-                <div className="skill-group">
-                  <span className="skill-group-label">DOMAINS</span>
-                  {["Data Journalism", "Civic Analytics", "Electoral Data", "FinOps", "Cloud Billing"].map(s => (
-                    <span key={s} className="skill-chip skill-chip--gold">{s}</span>
-                  ))}
-                </div>
-                <div className="skill-group">
-                  <span className="skill-group-label">DATA SOURCES</span>
-                  {["World Bank", "PLFS / MoSPI", "ILO", "CMIE", "ECI", "AWS CUR"].map(s => (
-                    <span key={s} className="skill-chip skill-chip--muted">{s}</span>
-                  ))}
-                </div>
+                {[
+                  { label: "TOOLS", chips: ["Tableau Public", "Excel / Power Query", "Python", "Pandas", "SQL"], cls: "" },
+                  { label: "DOMAINS", chips: ["Data Journalism", "Civic Analytics", "Electoral Data", "FinOps", "Cloud Billing"], cls: "skill-chip--gold" },
+                  { label: "DATA SOURCES", chips: ["World Bank", "PLFS / MoSPI", "ILO", "CMIE", "ECI", "AWS CUR"], cls: "skill-chip--muted" },
+                ].map(g => (
+                  <div key={g.label} className="skill-group">
+                    <span className="skill-group-label">{g.label}</span>
+                    {g.chips.map(s => <span key={s} className={"skill-chip " + g.cls}>{s}</span>)}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
+        <section id="CONTACT" className="section section--alt">
+          <div className="section-header">
+            <span className="section-label">GET IN TOUCH</span>
+            <h2 className="section-title">Contact</h2>
+            <p className="section-hint">Have feedback on my work? A collaboration idea? Or just want to say hi?</p>
+          </div>
+          <div className="contact-grid">
+            <div className="contact-left">
+              {[
+                { label: "EMAIL", value: ME.email, href: "mailto:" + ME.email },
+                { label: "LINKEDIN", value: "linkedin.com/in/salim-arshad", href: ME.linkedin },
+                { label: "GITHUB", value: "github.com/salimarshad07", href: ME.github },
+                { label: "LOCATION", value: ME.location, href: null },
+              ].map(c => (
+                <div key={c.label} className="contact-item">
+                  <span className="contact-label">{c.label}</span>
+                  {c.href ? <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="contact-value">{c.value}</a> : <span className="contact-value-plain">{c.value}</span>}
+                </div>
+              ))}
+            </div>
+            <div className="contact-right"><FeedbackForm /></div>
+          </div>
+        </section>
       </main>
-
-      {/* ── FOOTER ── */}
       <footer className="footer">
         <div className="footer-inner">
           <span className="footer-name">{ME.name}</span>
-          <span className="footer-loc">📍 {ME.location}</span>
-          <span className="footer-copy">Built with React · {new Date().getFullYear()}</span>
+          <span className="footer-loc">{ME.location}</span>
+          <span className="footer-copy">Built with React {new Date().getFullYear()}</span>
         </div>
       </footer>
     </div>
   );
 }
 
-// ── STYLES ──────────────────────────────────────────────────────────
 const CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #0a0a0a;
-    --bg-alt: #0f0f0f;
-    --surface: #141414;
-    --surface-2: #1c1c1c;
-    --border: rgba(255,255,255,0.07);
-    --text: #e8e8e4;
-    --text-muted: #666;
-    --text-dim: #444;
-    --accent: #c8f135;
-    --accent-dim: rgba(200,241,53,0.12);
-    --accent-border: rgba(200,241,53,0.3);
-    --gold: #f5c842;
-    --gold-dim: rgba(245,200,66,0.12);
-    --red: #ff4444;
-    --font-display: 'Syne', sans-serif;
-    --font-mono: 'DM Mono', monospace;
-    --font-body: 'DM Sans', sans-serif;
-    --max-w: 900px;
-    --nav-h: 60px;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-body);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .root { min-height: 100vh; }
-
-  /* ── NAV ── */
-  .nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    height: var(--nav-h);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 clamp(1rem, 5vw, 3rem);
-    background: rgba(10,10,10,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: var(--font-display);
-    font-weight: 800; font-size: 1.1rem;
-    color: var(--accent); background: none; border: none;
-    cursor: pointer; letter-spacing: 0.05em;
-  }
-  .nav-links { display: flex; align-items: center; gap: 0.25rem; }
-  .nav-link {
-    font-family: var(--font-mono); font-size: 0.7rem;
-    letter-spacing: 0.1em; color: var(--text-muted);
-    background: none; border: none; cursor: pointer;
-    padding: 0.5rem 0.75rem; border-radius: 4px;
-    transition: color 0.2s, background 0.2s;
-  }
-  .nav-link:hover { color: var(--text); }
-  .nav-link--active { color: var(--accent) !important; background: var(--accent-dim); }
-  .nav-cta {
-    font-family: var(--font-mono); font-size: 0.7rem;
-    letter-spacing: 0.1em; color: var(--bg);
-    background: var(--accent); border: none;
-    padding: 0.4rem 0.9rem; border-radius: 4px;
-    text-decoration: none; margin-left: 0.5rem;
-    transition: opacity 0.2s;
-  }
-  .nav-cta:hover { opacity: 0.85; }
-
-  /* ── HERO ── */
-  .hero {
-    position: relative; overflow: hidden;
-    min-height: 100vh; padding-top: var(--nav-h);
-    display: flex; align-items: center;
-  }
-  .hero-grid-bg {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(200,241,53,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200,241,53,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-  }
-  .hero-inner {
-    position: relative; z-index: 1;
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: clamp(3rem,8vh,6rem) clamp(1rem,5vw,3rem);
-  }
-  .hero-label {
-    font-family: var(--font-mono); font-size: 0.7rem;
-    letter-spacing: 0.2em; color: var(--accent);
-    margin-bottom: 1.5rem;
-  }
-  .hero-name {
-    font-family: var(--font-display);
-    font-size: clamp(2.8rem, 8vw, 5.5rem);
-    font-weight: 800; line-height: 0.95;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
-  }
-  .hero-tagline {
-    font-family: var(--font-mono); font-size: 0.85rem;
-    color: var(--accent); letter-spacing: 0.05em;
-    margin-bottom: 1.5rem;
-  }
-  .hero-bio {
-    font-size: 1.05rem; color: #aaa;
-    max-width: 600px; line-height: 1.7;
-    margin-bottom: 2.5rem;
-  }
-  .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
-  .btn-primary {
-    font-family: var(--font-mono); font-size: 0.75rem;
-    letter-spacing: 0.12em; color: var(--bg);
-    background: var(--accent); border: none;
-    padding: 0.75rem 1.5rem; cursor: pointer;
-    border-radius: 4px; transition: opacity 0.2s;
-  }
-  .btn-primary:hover { opacity: 0.85; }
-  .btn-secondary {
-    font-family: var(--font-mono); font-size: 0.75rem;
-    letter-spacing: 0.12em; color: var(--text);
-    background: none;
-    border: 1px solid var(--border);
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px; text-decoration: none;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-  .hero-stats { display: flex; align-items: center; gap: 1.5rem; }
-  .stat { display: flex; flex-direction: column; }
-  .stat-num {
-    font-family: var(--font-display); font-weight: 800;
-    font-size: 1.6rem; color: var(--accent); line-height: 1;
-  }
-  .stat-label {
-    font-family: var(--font-mono); font-size: 0.62rem;
-    color: var(--text-muted); letter-spacing: 0.1em;
-    margin-top: 0.2rem;
-  }
-  .stat-div { width: 1px; height: 2.5rem; background: var(--border); }
-
-  /* ── SECTION ── */
-  .section {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: clamp(4rem,8vw,7rem) clamp(1rem,5vw,3rem);
-  }
-  .section--alt { background: none; }
-  .section-header { margin-bottom: 3rem; }
-  .section-label {
-    font-family: var(--font-mono); font-size: 0.65rem;
-    letter-spacing: 0.25em; color: var(--accent);
-    display: block; margin-bottom: 0.5rem;
-  }
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 800; letter-spacing: -0.02em;
-  }
-
-  /* ── PROJECT CARDS ── */
-  .projects-list { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-
-  .project-card {
-    background: var(--surface);
-    padding: 1.75rem 2rem;
-    border-bottom: 1px solid var(--border);
-    transition: background 0.2s;
-    animation: fadeUp 0.5s ease both;
-  }
-  .project-card:last-child { border-bottom: none; }
-  .project-card:hover { background: var(--surface-2); }
-  .project-card--wip { opacity: 0.75; }
-  .project-card--wip:hover { opacity: 1; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .project-top {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 0.75rem;
-  }
-  .project-meta { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
-  .project-num {
-    font-family: var(--font-mono); font-size: 0.65rem;
-    color: var(--text-dim); letter-spacing: 0.1em;
-  }
-  .project-badge {
-    font-family: var(--font-mono); font-size: 0.6rem;
-    letter-spacing: 0.12em; padding: 0.2rem 0.5rem;
-    border-radius: 3px; font-weight: 500;
-  }
-  .badge--featured { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border); }
-  .badge--wip { background: rgba(255,160,0,0.12); color: #ffa000; border: 1px solid rgba(255,160,0,0.3); }
-  .badge--done { background: rgba(100,220,130,0.12); color: #64dc82; border: 1px solid rgba(100,220,130,0.3); }
-  .project-cat {
-    font-family: var(--font-mono); font-size: 0.6rem;
-    letter-spacing: 0.08em; color: var(--gold);
-    background: var(--gold-dim);
-    padding: 0.2rem 0.5rem; border-radius: 3px;
-  }
-  .project-expand {
-    font-size: 1.3rem; line-height: 1;
-    color: var(--text-muted); background: none; border: none;
-    cursor: pointer; padding: 0.25rem 0.5rem;
-    border-radius: 4px; transition: color 0.2s, background 0.2s;
-  }
-  .project-expand:hover { color: var(--accent); background: var(--accent-dim); }
-
-  .project-title {
-    font-family: var(--font-display);
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    font-weight: 700; line-height: 1.2;
-    margin-bottom: 1rem;
-    letter-spacing: -0.01em;
-  }
-
-  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
-  .tag {
-    font-family: var(--font-mono); font-size: 0.62rem;
-    letter-spacing: 0.05em; padding: 0.25rem 0.6rem;
-    background: var(--surface-2); color: var(--text-muted);
-    border: 1px solid var(--border); border-radius: 3px;
-  }
-  .tag--accent { background: var(--accent-dim); color: var(--accent); border-color: var(--accent-border); }
-
-  .project-expanded {
-    border-top: 1px solid var(--border);
-    padding-top: 1.25rem;
-    margin-bottom: 1.25rem;
-    animation: fadeUp 0.25s ease both;
-  }
-  .project-desc { font-size: 0.92rem; color: #999; line-height: 1.7; margin-bottom: 1rem; }
-  .project-insight {
-    background: var(--accent-dim);
-    border-left: 3px solid var(--accent);
-    padding: 0.9rem 1rem;
-    border-radius: 0 4px 4px 0;
-  }
-  .insight-label {
-    font-family: var(--font-mono); font-size: 0.6rem;
-    letter-spacing: 0.15em; color: var(--accent);
-    display: block; margin-bottom: 0.35rem;
-  }
-  .project-insight p { font-size: 0.88rem; color: #ccc; line-height: 1.6; }
-
-  .project-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-  .link-btn {
-    font-family: var(--font-mono); font-size: 0.65rem;
-    letter-spacing: 0.1em; padding: 0.45rem 0.9rem;
-    border-radius: 4px; text-decoration: none; border: 1px solid;
-    transition: all 0.2s;
-  }
-  .link-btn--primary { color: var(--accent); border-color: var(--accent-border); background: var(--accent-dim); }
-  .link-btn--primary:hover { background: var(--accent); color: var(--bg); }
-  .link-btn--ghost { color: var(--text-muted); border-color: var(--border); background: none; }
-  .link-btn--ghost:hover { color: var(--text); border-color: #555; }
-  .link-btn--disabled { color: var(--text-dim); border-color: var(--border); background: none; pointer-events: none; }
-
-  /* ── WRITING CARDS ── */
-  .writings-list { display: flex; flex-direction: column; gap: 1.25rem; }
-  .writing-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px; padding: 1.5rem 1.75rem;
-    animation: fadeUp 0.5s ease both;
-    transition: border-color 0.2s;
-  }
-  .writing-card:hover { border-color: rgba(200,241,53,0.25); }
-  .writing-meta { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
-  .writing-platform {
-    font-family: var(--font-mono); font-size: 0.62rem;
-    letter-spacing: 0.12em; color: var(--accent);
-    background: var(--accent-dim); border: 1px solid var(--accent-border);
-    padding: 0.2rem 0.5rem; border-radius: 3px;
-  }
-  .writing-cat {
-    font-family: var(--font-mono); font-size: 0.62rem;
-    color: var(--text-muted); letter-spacing: 0.05em;
-  }
-  .writing-title {
-    font-family: var(--font-display);
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    font-weight: 700; line-height: 1.3;
-    margin-bottom: 0.6rem;
-    letter-spacing: -0.01em;
-  }
-  .writing-desc { font-size: 0.88rem; color: #888; line-height: 1.65; margin-bottom: 1rem; }
-  .writing-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
-  .writing-reactions { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.05em; }
-  .writing-link {
-    font-family: var(--font-mono); font-size: 0.65rem;
-    letter-spacing: 0.1em; color: var(--accent);
-    text-decoration: none; transition: opacity 0.2s;
-  }
-  .writing-link:hover { opacity: 0.7; }
-
-  /* ── ABOUT ── */
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
-  .about-text { font-size: 0.95rem; color: #999; line-height: 1.75; margin-bottom: 1rem; }
-  .about-text strong { color: var(--text); }
-  .about-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
-  .about-link {
-    font-family: var(--font-mono); font-size: 0.7rem;
-    letter-spacing: 0.1em; color: var(--accent);
-    text-decoration: none; transition: opacity 0.2s;
-    border-bottom: 1px solid var(--accent-border);
-    padding-bottom: 0.1rem;
-  }
-  .about-link:hover { opacity: 0.7; }
-
-  .skills-block { display: flex; flex-direction: column; gap: 1.5rem; }
-  .skill-group { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
-  .skill-group-label {
-    font-family: var(--font-mono); font-size: 0.6rem;
-    letter-spacing: 0.2em; color: var(--text-dim);
-    width: 100%; margin-bottom: 0.1rem;
-  }
-  .skill-chip {
-    font-family: var(--font-mono); font-size: 0.65rem;
-    padding: 0.3rem 0.7rem; border-radius: 4px;
-    background: var(--surface-2); color: var(--text-muted);
-    border: 1px solid var(--border); letter-spacing: 0.03em;
-  }
-  .skill-chip--gold { background: var(--gold-dim); color: var(--gold); border-color: rgba(245,200,66,0.25); }
-  .skill-chip--muted { background: var(--surface); color: var(--text-dim); border-color: var(--border); }
-
-  /* ── FOOTER ── */
-  .footer {
-    border-top: 1px solid var(--border);
-    padding: 1.5rem clamp(1rem, 5vw, 3rem);
-  }
-  .footer-inner {
-    max-width: var(--max-w); margin: 0 auto;
-    display: flex; align-items: center; gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .footer-name { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; }
-  .footer-loc { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); }
-  .footer-copy { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); margin-left: auto; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 600px) {
-    .hero-stats { gap: 1rem; }
-    .stat-num { font-size: 1.3rem; }
-    .project-card { padding: 1.25rem; }
-    .nav-cta { display: none; }
-  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#0a0a0a;--bg-alt:#0d0d0d;--surface:#141414;--surface-2:#1c1c1c;--border:rgba(255,255,255,0.07);--text:#e8e8e4;--text-muted:#666;--text-dim:#3a3a3a;--accent:#c8f135;--accent-dim:rgba(200,241,53,0.1);--accent-border:rgba(200,241,53,0.25);--gold:#f5c842;--gold-dim:rgba(245,200,66,0.1);--font-display:'Syne',sans-serif;--font-mono:'DM Mono',monospace;--font-body:'DM Sans',sans-serif;--max-w:960px;--nav-h:60px}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .root{min-height:100vh}
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,5vw,3rem);background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .nav-logo{font-family:var(--font-display);font-weight:800;font-size:1.1rem;color:var(--accent);background:none;border:none;cursor:pointer}
+  .nav-links{display:flex;align-items:center;gap:.25rem}
+  .nav-link{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;color:var(--text-muted);background:none;border:none;cursor:pointer;padding:.5rem .75rem;border-radius:4px;transition:all .2s}
+  .nav-link:hover{color:var(--text)}
+  .nav-link--active{color:var(--accent)!important;background:var(--accent-dim)}
+  .nav-cta{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;color:var(--bg);background:var(--accent);padding:.4rem .9rem;border-radius:4px;text-decoration:none;margin-left:.5rem;transition:opacity .2s}
+  .nav-cta:hover{opacity:.85}
+  .hero{position:relative;overflow:hidden;min-height:100vh;padding-top:var(--nav-h);display:flex;align-items:center}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,241,53,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,241,53,.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%)}
+  .hero-inner{position:relative;z-index:1;max-width:var(--max-w);margin:0 auto;padding:clamp(3rem,8vh,6rem) clamp(1rem,5vw,3rem)}
+  .hero-label{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.2em;color:var(--accent);margin-bottom:1.5rem}
+  .hero-name{font-family:var(--font-display);font-size:clamp(2.8rem,8vw,5.5rem);font-weight:800;line-height:.95;letter-spacing:-.02em;margin-bottom:1rem}
+  .hero-tagline{font-family:var(--font-mono);font-size:.85rem;color:var(--accent);letter-spacing:.05em;margin-bottom:1.5rem}
+  .hero-bio{font-size:1.05rem;color:#aaa;max-width:600px;line-height:1.7;margin-bottom:2.5rem}
+  .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:3rem}
+  .btn-primary{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.12em;color:var(--bg);background:var(--accent);border:none;padding:.75rem 1.5rem;cursor:pointer;border-radius:4px;transition:opacity .2s}
+  .btn-primary:hover{opacity:.85}
+  .btn-secondary{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.12em;color:var(--text);background:none;border:1px solid var(--border);padding:.75rem 1.5rem;border-radius:4px;cursor:pointer;transition:all .2s}
+  .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+  .hero-stats{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+  .stat{display:flex;flex-direction:column}
+  .stat-num{font-family:var(--font-display);font-weight:800;font-size:1.6rem;color:var(--accent);line-height:1}
+  .stat-label{font-family:var(--font-mono);font-size:.62rem;color:var(--text-muted);letter-spacing:.1em;margin-top:.2rem}
+  .stat-div{width:1px;height:2.5rem;background:var(--border)}
+  .section{max-width:var(--max-w);margin:0 auto;padding:clamp(4rem,8vw,7rem) clamp(1rem,5vw,3rem)}
+  .section--alt{background:none}
+  .section-header{margin-bottom:2.5rem}
+  .section-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.25em;color:var(--accent);display:block;margin-bottom:.5rem}
+  .section-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.5rem}
+  .section-hint{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);letter-spacing:.05em}
+  .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+  @media(max-width:640px){.projects-grid{grid-template-columns:1fr}}
+  .project-card{background:var(--surface);padding:1.75rem;cursor:pointer;transition:background .2s;animation:fadeUp .5s ease both;display:flex;flex-direction:column;gap:.75rem}
+  .project-card:hover{background:var(--surface-2)}
+  .project-card--wip{opacity:.8}
+  .project-card--wip:hover{opacity:1}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  .project-card-top{display:flex;align-items:center;justify-content:space-between}
+  .project-card-meta{display:flex;align-items:center;gap:.5rem}
+  .project-num{font-family:var(--font-mono);font-size:.62rem;color:var(--text-dim)}
+  .project-badge{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.1em;padding:.18rem .45rem;border-radius:3px}
+  .badge--featured{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border)}
+  .badge--wip{background:rgba(255,160,0,.1);color:#ffa000;border:1px solid rgba(255,160,0,.25)}
+  .badge--done{background:rgba(100,220,130,.1);color:#64dc82;border:1px solid rgba(100,220,130,.25)}
+  .project-cat-chip{font-family:var(--font-mono);font-size:.58rem;color:var(--gold);background:var(--gold-dim);padding:.18rem .45rem;border-radius:3px}
+  .project-title{font-family:var(--font-display);font-size:clamp(1rem,2vw,1.2rem);font-weight:700;line-height:1.2;letter-spacing:-.01em}
+  .project-subtitle{font-size:.82rem;color:#888;line-height:1.5;flex:1}
+  .project-tools{display:flex;flex-wrap:wrap;gap:.35rem}
+  .tool-chip{font-family:var(--font-mono);font-size:.6rem;padding:.2rem .5rem;background:var(--surface-2);color:var(--text-muted);border:1px solid var(--border);border-radius:3px}
+  .project-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:.75rem;border-top:1px solid var(--border)}
+  .project-quick-links{display:flex;gap:.5rem}
+  .quick-link{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted)}
+  .project-cta{font-family:var(--font-mono);font-size:.65rem;color:var(--accent);letter-spacing:.05em}
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px);animation:fadeIn .2s ease}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .modal{background:#111;border:1px solid rgba(200,241,53,.2);border-radius:12px;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;position:relative;animation:slideUp .25s ease}
+  @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .modal-close{position:sticky;top:1rem;float:right;margin:.75rem .75rem 0 0;background:var(--surface-2);border:1px solid var(--border);color:var(--text-muted);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:.8rem;z-index:10;transition:all .2s}
+  .modal-close:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+  .modal-header{padding:1.5rem 1.75rem 1rem;border-bottom:1px solid var(--border)}
+  .modal-meta{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap}
+  .modal-num{font-family:var(--font-mono);font-size:.62rem;color:var(--text-dim)}
+  .modal-cat{font-family:var(--font-mono);font-size:.62rem;color:var(--gold);background:var(--gold-dim);padding:.18rem .45rem;border-radius:3px}
+  .modal-badge{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.1em;padding:.18rem .45rem;border-radius:3px}
+  .modal-title{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.6rem);font-weight:800;line-height:1.2;letter-spacing:-.01em;margin-bottom:.5rem}
+  .modal-subtitle{font-size:.88rem;color:#888;font-style:italic}
+  .modal-body{padding:1.5rem 1.75rem;display:flex;flex-direction:column;gap:1.5rem}
+  .modal-desc{font-size:.92rem;color:#aaa;line-height:1.75}
+  .modal-section{display:flex;flex-direction:column;gap:.6rem}
+  .modal-section-title{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.18em;color:var(--text-muted)}
+  .insights-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+  .insight-item{display:flex;align-items:flex-start;gap:.6rem;font-size:.88rem;color:#ccc;line-height:1.5}
+  .insight-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:.4rem}
+  .modal-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+  .modal-tag{font-family:var(--font-mono);font-size:.65rem;padding:.3rem .7rem;border-radius:4px;letter-spacing:.03em}
+  .modal-tag--tool{background:var(--surface-2);color:var(--accent);border:1px solid var(--accent-border)}
+  .modal-tag--source{background:var(--gold-dim);color:var(--gold);border:1px solid rgba(245,200,66,.2);text-decoration:none;transition:opacity .2s}
+  .modal-tag--source:hover{opacity:.7}
+  .modal-links{display:flex;flex-wrap:wrap;gap:.6rem}
+  .modal-link-btn{display:flex;align-items:center;gap:.4rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;padding:.6rem 1rem;border-radius:6px;text-decoration:none;transition:all .2s;border:1px solid}
+  .modal-link-btn--tableau{color:#4e9fd1;border-color:rgba(78,159,209,.3);background:rgba(78,159,209,.08)}
+  .modal-link-btn--tableau:hover{background:rgba(78,159,209,.2)}
+  .modal-link-btn--github{color:#e8e8e4;border-color:var(--border);background:var(--surface-2)}
+  .modal-link-btn--github:hover{border-color:#888}
+  .modal-link-btn--linkedin{color:#4a90d9;border-color:rgba(74,144,217,.3);background:rgba(74,144,217,.08)}
+  .modal-link-btn--linkedin:hover{background:rgba(74,144,217,.2)}
+  .writings-list{display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+  .writing-card{background:var(--surface);padding:1.5rem 1.75rem;border-bottom:1px solid var(--border);animation:fadeUp .5s ease both;transition:background .2s}
+  .writing-card:last-child{border-bottom:none}
+  .writing-card:hover{background:var(--surface-2)}
+  .writing-meta{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem;flex-wrap:wrap}
+  .writing-platform{font-family:var(--font-mono);font-size:.62rem;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);padding:.18rem .45rem;border-radius:3px}
+  .writing-cat{font-family:var(--font-mono);font-size:.62rem;color:var(--text-muted)}
+  .writing-title{font-family:var(--font-display);font-size:clamp(1rem,2vw,1.15rem);font-weight:700;line-height:1.3;margin-bottom:.5rem}
+  .writing-desc{font-size:.86rem;color:#888;line-height:1.6;margin-bottom:.75rem}
+  .writing-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+  .writing-stats{font-family:var(--font-mono);font-size:.62rem;color:var(--text-dim)}
+  .writing-link{font-family:var(--font-mono);font-size:.65rem;color:var(--accent);text-decoration:none;transition:opacity .2s}
+  .writing-link:hover{opacity:.7}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+  @media(max-width:700px){.about-grid{grid-template-columns:1fr;gap:2.5rem}}
+  .about-text{font-size:.95rem;color:#999;line-height:1.75;margin-bottom:1rem}
+  .about-text strong{color:var(--text)}
+  .about-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+  .about-link{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);padding-bottom:.1rem;transition:opacity .2s}
+  .about-link:hover{opacity:.7}
+  .skills-block{display:flex;flex-direction:column;gap:1.5rem}
+  .skill-group{display:flex;flex-wrap:wrap;gap:.5rem}
+  .skill-group-label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.2em;color:var(--text-dim);width:100%;margin-bottom:.1rem}
+  .skill-chip{font-family:var(--font-mono);font-size:.65rem;padding:.3rem .7rem;border-radius:4px;background:var(--surface-2);color:var(--text-muted);border:1px solid var(--border)}
+  .skill-chip--gold{background:var(--gold-dim);color:var(--gold);border-color:rgba(245,200,66,.2)}
+  .skill-chip--muted{background:var(--surface);color:var(--text-dim);border-color:var(--border)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:start}
+  @media(max-width:700px){.contact-grid{grid-template-columns:1fr;gap:2.5rem}}
+  .contact-item{margin-bottom:1.5rem}
+  .contact-label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.2em;color:var(--text-dim);display:block;margin-bottom:.25rem}
+  .contact-value{font-size:.9rem;color:var(--accent);text-decoration:none;transition:opacity .2s;display:block}
+  .contact-value:hover{opacity:.7}
+  .contact-value-plain{font-size:.9rem;color:var(--text-muted)}
+  .feedback-form{display:flex;flex-direction:column;gap:1rem}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+  @media(max-width:500px){.form-row{grid-template-columns:1fr}}
+  .form-group{display:flex;flex-direction:column;gap:.4rem}
+  .form-group label{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.12em;color:var(--text-muted)}
+  .form-group input,.form-group textarea{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.65rem .85rem;color:var(--text);font-family:var(--font-body);font-size:.88rem;transition:border-color .2s;resize:vertical}
+  .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--accent-border)}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-dim)}
+  .type-pills{display:flex;flex-wrap:wrap;gap:.4rem}
+  .type-pill{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.08em;padding:.3rem .7rem;border-radius:20px;border:1px solid var(--border);background:none;color:var(--text-muted);cursor:pointer;transition:all .2s;text-transform:lowercase}
+  .type-pill:hover{border-color:var(--accent-border);color:var(--accent)}
+  .type-pill--active{background:var(--accent-dim);color:var(--accent);border-color:var(--accent-border)}
+  .form-submit{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.1em;color:var(--bg);background:var(--accent);border:none;padding:.8rem 1.5rem;border-radius:6px;cursor:pointer;transition:opacity .2s;margin-top:.5rem}
+  .form-submit:hover:not(:disabled){opacity:.85}
+  .form-submit:disabled{opacity:.4;cursor:not-allowed}
+  .form-success{text-align:center;padding:2rem}
+  .form-success-icon{font-size:2rem;color:var(--accent);margin-bottom:.75rem}
+  .form-success h3{font-family:var(--font-display);font-size:1.2rem;margin-bottom:.4rem}
+  .form-success p{font-size:.88rem;color:#888}
+  .footer{border-top:1px solid var(--border);padding:1.5rem clamp(1rem,5vw,3rem)}
+  .footer-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+  .footer-name{font-family:var(--font-display);font-weight:700;font-size:.9rem}
+  .footer-loc{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted)}
+  .footer-copy{font-family:var(--font-mono);font-size:.65rem;color:var(--text-dim);margin-left:auto}
+  @media(max-width:600px){.hero-stats{gap:1rem}.stat-num{font-size:1.3rem}.project-card{padding:1.25rem}.nav-cta{display:none}.modal{max-height:95vh}.modal-body{padding:1.25rem}.modal-header{padding:1.25rem 1.25rem .75rem}}
 `;
