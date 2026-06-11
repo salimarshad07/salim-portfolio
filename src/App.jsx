@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const ME = {
   name: "Salim Arshad",
   tagline: "Data Analyst · Data Journalist · Civic Technologist",
-  bio: "I work at the intersection of data, public policy, and storytelling. Currently an AWS Cloud Billing & O2C Associate — building toward a career in data journalism and civic analytics. I fi[...]
+  bio: "I work at the intersection of data, public policy, and storytelling. Currently an AWS Cloud Billing & O2C Associate — building toward a career in data journalism and civic analytics.",
   location: "West Bengal, India",
   github: "https://github.com/salimarshad07",
   linkedin: "https://www.linkedin.com/in/salim-arshad",
@@ -15,10 +15,10 @@ const PROJECTS = [
     id: "proj_001", num: "001", badge: "FEATURED", category: "Data Journalism",
     title: "India's Employment Crisis — A Data Story",
     subtitle: "30 years of data. One viral moment. The numbers nobody wanted to talk about.",
-    desc: "A judge called India's unemployed youth \"cockroaches.\" 22 million people responded in 7 days. I went to the data. Built a full multi-panel Tableau dashboard using World Bank, PLFS/MoS[...]
-    insights: ["44.5% of Indian graduates aged 20–24 are unemployed","Youth make up 83% of India's total unemployed","India's GDP grew 7× since 2000 — but youth jobs never caught up","The rup[...]
+    desc: "A judge called India's unemployed youth cockroaches. 22 million people responded in 7 days. I went to the data. Built a full multi-panel Tableau dashboard using World Bank, PLFS/MoSPI, ILO, and CMIE datasets.",
+    insights: ["44.5% of Indian graduates aged 20–24 are unemployed","Youth make up 83% of India's total unemployed","India's GDP grew 7× since 2000 — but youth jobs never caught up","The rupee lost 60% value while youth employment stagnated"],
     tools: ["Tableau Public", "Microsoft Excel"],
-    dataSources: [{ name: "World Bank", url: "https://data.worldbank.org" },{ name: "PLFS / MoSPI", url: "https://mospi.gov.in" },{ name: "ILO", url: "https://ilostat.ilo.org" },{ name: "CMIE", ur[...]
+    dataSources: [{ name: "World Bank", url: "https://data.worldbank.org" },{ name: "PLFS / MoSPI", url: "https://mospi.gov.in" },{ name: "ILO", url: "https://ilostat.ilo.org" },{ name: "CMIE", url: "https://www.cmie.com" }],
     links: { tableau: "https://lnkd.in/gdymgRB8", github: "https://lnkd.in/gSmiMisQ", linkedin: "https://www.linkedin.com/in/salim-arshad" },
     status: "live",
   },
@@ -26,8 +26,8 @@ const PROJECTS = [
     id: "proj_002", num: "002", badge: null, category: "FinOps",
     title: "AWS Cloud Cost Anomaly Detector",
     subtitle: "Excel-based z-score model that caught $47K in missed billing anomalies.",
-    desc: "Built an Excel-based anomaly detection model using z-score thresholds on AWS Cost & Usage Reports (CUR). Reduced manual review time by ~40% for a Fortune 500 Oil & Gas client by automat[...]
-    insights: ["Flagged 3 billing anomalies worth ~$47K in a single quarter","Reduced manual review time by ~40%","Automated spike flagging across 12 AWS service dimensions","Deployed for a Fortun[...]
+    desc: "Built an Excel-based anomaly detection model using z-score thresholds on AWS Cost & Usage Reports (CUR). Reduced manual review time by 40% for a Fortune 500 Oil & Gas client by automating spike detection.",
+    insights: ["Flagged 3 billing anomalies worth ~$47K in a single quarter","Reduced manual review time by ~40%","Automated spike flagging across 12 AWS service dimensions","Deployed for a Fortune 500 client"],
     tools: ["Excel / Power Query", "Z-Score Modelling", "AWS CUR"],
     dataSources: [{ name: "AWS Cost & Usage Reports", url: "https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/" }],
     links: { github: "https://github.com/salimarshad07", linkedin: "https://www.linkedin.com/in/salim-arshad" },
@@ -37,8 +37,8 @@ const PROJECTS = [
     id: "proj_003", num: "003", badge: "COMPLETED", category: "Civic Data",
     title: "West Bengal 2026 — Electoral Data Analysis",
     subtitle: "293 constituencies. 92.93% turnout. What the numbers say about a historic mandate.",
-    desc: "Constituency-level analysis of the 2026 West Bengal Legislative Assembly elections. 293 constituencies, 6.3 crore votes cast, 92.93% voter turnout — the highest in state history. Mapp[...]
-    insights: ["BJP won 214 seats with 45.84% vote share","AITC won 79 seats with 40.80% vote share","A 5.04 point vote share gap produced a 135-seat difference","75 out of 100 seats won by 20,000[...]
+    desc: "Constituency-level analysis of the 2026 West Bengal Legislative Assembly elections. 293 constituencies, 6.3 crore votes cast, 92.93% voter turnout — the highest in state history. Mapped every seat by margin and analyzed vote share patterns.",
+    insights: ["BJP won 214 seats with 45.84% vote share","AITC won 79 seats with 40.80% vote share","A 5.04 point vote share gap produced a 135-seat difference","75 out of 100 seats won by less than 20,000 votes"],
     tools: ["Python", "Pandas", "Data Visualization"],
     dataSources: [{ name: "Election Commission of India", url: "https://eci.gov.in" },{ name: "ECI Results", url: "https://results.eci.gov.in" }],
     links: { github: "https://github.com/salimarshad07/west_bengal_election_2026_analysis", linkedin: "https://www.linkedin.com/in/salim-arshad" },
@@ -48,8 +48,8 @@ const PROJECTS = [
     id: "proj_004", num: "004", badge: "IN PROGRESS", category: "Media Analytics",
     title: "Netflix Content Analysis Dashboard",
     subtitle: "3 interactive Tableau pages. 8,807 titles. Where content actually comes from.",
-    desc: "3 interactive Tableau pages analyzing 8,807 Netflix titles. Overview of 6,131 movies vs 2,676 shows, peak growth in 2019, genre and rating breakdown, and an interactive world map showin[...]
-    insights: ["8,807 Netflix titles analyzed across 3 dashboard pages","6,131 Movies vs 2,676 TV Shows","Content growth peaked in 2019","Netflix added more content in 2015–2019 than all prior y[...]
+    desc: "3 interactive Tableau pages analyzing 8,807 Netflix titles. Overview of 6,131 movies vs 2,676 shows, peak growth in 2019, genre and rating breakdown, and an interactive world map showing content distribution by country.",
+    insights: ["8,807 Netflix titles analyzed across 3 dashboard pages","6,131 Movies vs 2,676 TV Shows","Content growth peaked in 2019","Netflix added more content in 2015–2019 than all prior years combined"],
     tools: ["Tableau Public", "Excel", "Data Cleaning"],
     dataSources: [{ name: "Kaggle Netflix Dataset", url: "https://www.kaggle.com/datasets/shivamb/netflix-shows" }],
     links: { tableau: "#", github: "https://github.com/salimarshad07/netflix_content_analysis_dashboard", linkedin: "https://www.linkedin.com/in/salim-arshad" },
@@ -59,19 +59,19 @@ const PROJECTS = [
     id: "proj_005", num: "005", badge: "COMPLETED", category: "E-Commerce Analytics",
     title: "Blinkit Quick Commerce Analytics",
     subtitle: "2,500 customers. 1,061 orders. Tier-2/3 cities drive real growth.",
-    desc: "Full-stack analytics project analyzing Blinkit's e-commerce operations across 2,500 customers and 1,061 orders. Built interactive Tableau dashboard with 4 key visualizations: delivery performance (69.84% on-time rate), revenue by customer segment (Regular > Premium), category margin analysis (Instant & Frozen Food 40% highest), and geographic insights revealing Tier-2/3 cities as growth engines. SQL queries analyzed customer segments, delivery efficiency, and profitability across 268 product categories.",
-    insights: ["Regular customers generate MORE revenue than Premium segment — counterintuitive finding","30% of orders face delays — critical ops issue for speed-first brand","Instant & Frozen Food has 40% margin vs Grocery 15% — margin inversion","Tier-2/3 cities (Saharsa, Orai) outperform metros — true growth opportunity","Average order value ₹2,227 with right skew from high-value orders"],
+    desc: "Full-stack analytics project analyzing Blinkit's e-commerce operations across 2,500 customers and 1,061 orders. Built interactive Tableau dashboard with 4 key visualizations: delivery performance showing 69.84% on-time rate, revenue by customer segment revealing Regular > Premium, category margin analysis showing Instant & Frozen Food at 40% highest, and geographic insights revealing Tier-2/3 cities as growth engines.",
+    insights: ["Regular customers generate MORE revenue than Premium segment — counterintuitive finding","30% of orders face delays — critical ops issue for speed-first brand","Instant & Frozen Food has 40% margin vs Grocery 15% — margin inversion","Tier-2/3 cities like Saharsa and Orai outperform metros — true growth opportunity","Average order value ₹2,227 with right skew from high-value orders"],
     tools: ["Tableau Public", "Python", "MySQL", "Pandas", "Excel"],
-    dataSources: [{ name: "Blinkit E-Commerce Dataset", url: "https://github.com/salimarshad07/blinkit-analytics" },{ name: "Custom MySQL Database", url: "#" }],
+    dataSources: [{ name: "Blinkit E-Commerce Dataset", url: "https://github.com/salimarshad07/blinkit-analytics" },{ name: "Custom MySQL Database", url: "https://github.com/salimarshad07/blinkit-analytics" }],
     links: { tableau: "https://public.tableau.com/views/BlinkITEcomAnalyticsFindings2023-24/BlinkitAnalyticsDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link", github: "https://github.com/salimarshad07/blinkit-analytics", linkedin: "https://www.linkedin.com/in/salim-arshad" },
     status: "live",
   },
 ];
 
 const WRITINGS = [
-  { id: "w_001", platform: "LinkedIn", category: "Data Journalism · Viral Post", title: "A Judge Called India's Unemployed Youth \"Cockroaches.\" Here's What the Data Says.", desc: "When a judge'[...]
-  { id: "w_002", platform: "LinkedIn", category: "Electoral Analysis", title: "West Bengal Legislative Assembly Election 2026 — A Data Analysis", desc: "293 constituencies. 6.3 crore votes. 92.9[...]
-  { id: "w_003", platform: "LinkedIn", category: "Media Analytics", title: "Just Published: Netflix Content Analysis Dashboard on Tableau Public", desc: "3 interactive pages analyzing 8,807 Netfli[...]
+  { id: "w_001", platform: "LinkedIn", category: "Data Journalism · Viral Post", title: "A Judge Called India's Unemployed Youth \"Cockroaches.\" Here's What the Data Says.", desc: "When a judge's words spark national outrage, the data reveals uncomfortable truths about jobs, currency, and a generation left behind.", url: "#" },
+  { id: "w_002", platform: "LinkedIn", category: "Electoral Analysis", title: "West Bengal Legislative Assembly Election 2026 — A Data Analysis", desc: "293 constituencies. 6.3 crore votes. 92.93% turnout. The numbers tell the story of a historic election.", url: "#" },
+  { id: "w_003", platform: "LinkedIn", category: "Media Analytics", title: "Just Published: Netflix Content Analysis Dashboard on Tableau Public", desc: "3 interactive pages analyzing 8,807 Netflix titles — where does their content actually come from?", url: "#" },
 ];
 
 function FeedbackForm() {
@@ -116,8 +116,8 @@ function FeedbackForm() {
           ))}
         </div>
       </div>
-      <div className="form-group"><label>Message *</label><textarea name="message" value={form.message} onChange={handle} placeholder="Your thoughts, feedback, collaboration idea..." rows={4} /><[...]
-      <button className="form-submit" onClick={submit} disabled={loading || !form.message.trim()}>{loading ? "Sending..." : "Send Message \u2192"}</button>
+      <div className="form-group"><label>Message *</label><textarea name="message" value={form.message} onChange={handle} placeholder="Your thoughts, feedback, collaboration idea..." rows={4} /></div>
+      <button className="form-submit" onClick={submit} disabled={loading || !form.message.trim()}>{loading ? "Sending..." : "Send Message →"}</button>
     </div>
   );
 }
@@ -136,7 +136,7 @@ function ProjectModal({ project, onClose }) {
         <div className="modal-header">
           <div className="modal-meta">
             <span className="modal-num">_{project.num}</span>
-            {project.badge && <span className={"modal-badge " + (project.status === "wip" ? "badge--wip" : project.badge === "FEATURED" ? "badge--featured" : "badge--done")}>{project.badge}</span[...]
+            {project.badge && <span className={"modal-badge " + (project.status === "wip" ? "badge--wip" : project.badge === "FEATURED" ? "badge--featured" : "badge--done")}>{project.badge}</span>}
             <span className="modal-cat">{project.category}</span>
           </div>
           <h2 className="modal-title">{project.title}</h2>
@@ -159,7 +159,7 @@ function ProjectModal({ project, onClose }) {
           <div className="modal-section">
             <h4 className="modal-section-title">DATA SOURCES</h4>
             <div className="modal-tags">
-              {project.dataSources.map(s => <a key={s.name} href={s.url} target="_blank" rel="noreferrer" className="modal-tag modal-tag--source">{s.name} &uarr;</a>)}
+              {project.dataSources.map(s => <a key={s.name} href={s.url} target="_blank" rel="noreferrer" className="modal-tag modal-tag--source">{s.name} ↗</a>)}
             </div>
           </div>
           <div className="modal-section">
@@ -287,9 +287,9 @@ export default function App() {
           </div>
           <div className="about-grid">
             <div className="about-left">
-              <p className="about-text">I am <strong>Salim Arshad</strong> — currently an AWS Cloud Billing and O2C Associate, building toward a career in data journalism and civic analytics.<[...]
-              <p className="about-text">My work sits at the intersection of public data, policy, and storytelling. I do not just make dashboards — I ask what the numbers mean for real people, a[...]
-              <p className="about-text">When a judge called India unemployed youth cockroaches, I built a 30-year data model. When West Bengal held its highest-ever-turnout election, I mapped eve[...]
+              <p className="about-text">I am <strong>Salim Arshad</strong> — currently an AWS Cloud Billing and O2C Associate, building toward a career in data journalism and civic analytics.</p>
+              <p className="about-text">My work sits at the intersection of public data, policy, and storytelling. I do not just make dashboards — I ask what the numbers mean for real people, and I tell that story.</p>
+              <p className="about-text">When a judge called India unemployed youth cockroaches, I built a 30-year data model. When West Bengal held its highest-ever-turnout election, I mapped every constituency. When Blinkit revealed tier-2 cities as growth engines, I analyzed the data behind it.</p>
               <div className="about-links">
                 <a href={ME.github} target="_blank" rel="noreferrer" className="about-link">GitHub</a>
                 <a href={ME.linkedin} target="_blank" rel="noreferrer" className="about-link">LinkedIn</a>
@@ -300,7 +300,7 @@ export default function App() {
               <div className="skills-block">
                 {[
                   { label: "TOOLS", chips: ["Tableau Public", "Excel / Power Query", "Python", "Pandas", "SQL"], cls: "" },
-                  { label: "DOMAINS", chips: ["Data Journalism", "Civic Analytics", "Electoral Data", "FinOps", "Cloud Billing"], cls: "skill-chip--gold" },
+                  { label: "DOMAINS", chips: ["Data Journalism", "Civic Analytics", "Electoral Data", "FinOps", "E-Commerce Analytics"], cls: "skill-chip--gold" },
                   { label: "DATA SOURCES", chips: ["World Bank", "PLFS / MoSPI", "ILO", "CMIE", "ECI", "AWS CUR"], cls: "skill-chip--muted" },
                 ].map(g => (
                   <div key={g.label} className="skill-group">
@@ -328,7 +328,7 @@ export default function App() {
               ].map(c => (
                 <div key={c.label} className="contact-item">
                   <span className="contact-label">{c.label}</span>
-                  {c.href ? <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="contact-value">{c.value}</a> : <span className="contact-value-pl[...]
+                  {c.href ? <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="contact-value">{c.value}</a> : <span className="contact-value-plain">{c.value}</span>}
                 </div>
               ))}
             </div>
@@ -350,29 +350,29 @@ export default function App() {
 const CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--bg:#0a0a0a;--bg-alt:#0d0d0d;--surface:#141414;--surface-2:#1c1c1c;--border:rgba(255,255,255,0.07);--text:#e8e8e4;--text-muted:#666;--text-dim:#3a3a3a;--accent:#c8f135;--accent-dim:rgba([...]
+  :root{--bg:#0a0a0a;--bg-alt:#0d0d0d;--surface:#141414;--surface-2:#1c1c1c;--border:rgba(255,255,255,0.07);--text:#e8e8e4;--text-muted:#666;--text-dim:#3a3a3a;--accent:#c8f135;--accent-dim:rgba(200,241,53,.15);--accent-border:rgba(200,241,53,.3);--gold:#f5c842;--gold-dim:rgba(245,200,66,.1);--font-display:'Syne';--font-mono:'DM Mono';--font-body:'DM Sans';--nav-h:60px;--max-w:1200px}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased}
   .root{min-height:100vh}
-  .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,5vw,3rem);background:rgba(10,10,10,0.[...]
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,5vw,3rem);background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
   .nav-logo{font-family:var(--font-display);font-weight:800;font-size:1.1rem;color:var(--accent);background:none;border:none;cursor:pointer}
   .nav-links{display:flex;align-items:center;gap:.25rem}
-  .nav-link{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;color:var(--text-muted);background:none;border:none;cursor:pointer;padding:.5rem .75rem;border-radius:4px;transition:[...]
+  .nav-link{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;color:var(--text-muted);background:none;border:none;cursor:pointer;padding:.5rem .75rem;border-radius:4px;transition:all .2s}
   .nav-link:hover{color:var(--text)}
-  .nav-link--active{color:var(--accent)!important;background:var(--accent-dim)}
-  .nav-cta{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;color:var(--bg);background:var(--accent);padding:.4rem .9rem;border-radius:4px;text-decoration:none;margin-left:.5rem;[...]
+  .nav-link--active{color:var(--accent);background:var(--accent-dim)}
+  .nav-cta{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;color:var(--bg);background:var(--accent);padding:.4rem .9rem;border-radius:4px;text-decoration:none;margin-left:.5rem;transition:opacity .2s}
   .nav-cta:hover{opacity:.85}
   .hero{position:relative;overflow:hidden;min-height:100vh;padding-top:var(--nav-h);display:flex;align-items:center}
-  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,241,53,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,241,53,.03) 1px,transparent 1px);background-size:6[...]
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,241,53,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,241,53,.03) 1px,transparent 1px);background-size:60px 60px;opacity:.5}
   .hero-inner{position:relative;z-index:1;max-width:var(--max-w);margin:0 auto;padding:clamp(3rem,8vh,6rem) clamp(1rem,5vw,3rem)}
   .hero-label{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.2em;color:var(--accent);margin-bottom:1.5rem}
   .hero-name{font-family:var(--font-display);font-size:clamp(2.8rem,8vw,5.5rem);font-weight:800;line-height:.95;letter-spacing:-.02em;margin-bottom:1rem}
   .hero-tagline{font-family:var(--font-mono);font-size:.85rem;color:var(--accent);letter-spacing:.05em;margin-bottom:1.5rem}
   .hero-bio{font-size:1.05rem;color:#aaa;max-width:600px;line-height:1.7;margin-bottom:2.5rem}
   .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:3rem}
-  .btn-primary{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.12em;color:var(--bg);background:var(--accent);border:none;padding:.75rem 1.5rem;cursor:pointer;border-radius:4px;trans[...]
+  .btn-primary{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.12em;color:var(--bg);background:var(--accent);border:none;padding:.75rem 1.5rem;cursor:pointer;border-radius:4px;transition:opacity .2s}
   .btn-primary:hover{opacity:.85}
-  .btn-secondary{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.12em;color:var(--text);background:none;border:1px solid var(--border);padding:.75rem 1.5rem;border-radius:4px;cursor[...]
+  .btn-secondary{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.12em;color:var(--text);background:none;border:1px solid var(--border);padding:.75rem 1.5rem;border-radius:4px;cursor:pointer;transition:all .2s}
   .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
   .hero-stats{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
   .stat{display:flex;flex-direction:column}
@@ -408,11 +408,11 @@ const CSS = `
   .project-quick-links{display:flex;gap:.5rem}
   .quick-link{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted)}
   .project-cta{font-family:var(--font-mono);font-size:.65rem;color:var(--accent);letter-spacing:.05em}
-  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px);animation:fadeIn .2s e[...]
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px);animation:fadeIn .2s ease}
   @keyframes fadeIn{from{opacity:0}to{opacity:1}}
   .modal{background:#111;border:1px solid rgba(200,241,53,.2);border-radius:12px;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;position:relative;animation:slideUp .25s ease}
   @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-  .modal-close{position:sticky;top:1rem;float:right;margin:.75rem .75rem 0 0;background:var(--surface-2);border:1px solid var(--border);color:var(--text-muted);width:32px;height:32px;border-radiu[...]
+  .modal-close{position:sticky;top:1rem;float:right;margin:.75rem .75rem 0 0;background:var(--surface-2);border:1px solid var(--border);color:var(--text-muted);width:32px;height:32px;border-radius:4px;cursor:pointer;transition:all .2s}
   .modal-close:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
   .modal-header{padding:1.5rem 1.75rem 1rem;border-bottom:1px solid var(--border)}
   .modal-meta{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap}
@@ -434,7 +434,7 @@ const CSS = `
   .modal-tag--source{background:var(--gold-dim);color:var(--gold);border:1px solid rgba(245,200,66,.2);text-decoration:none;transition:opacity .2s}
   .modal-tag--source:hover{opacity:.7}
   .modal-links{display:flex;flex-wrap:wrap;gap:.6rem}
-  .modal-link-btn{display:flex;align-items:center;gap:.4rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;padding:.6rem 1rem;border-radius:6px;text-decoration:none;transition:[...]
+  .modal-link-btn{display:flex;align-items:center;gap:.4rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;padding:.6rem 1rem;border-radius:6px;text-decoration:none;transition:all .2s;border:1px solid}
   .modal-link-btn--tableau{color:#4e9fd1;border-color:rgba(78,159,209,.3);background:rgba(78,159,209,.08)}
   .modal-link-btn--tableau:hover{background:rgba(78,159,209,.2)}
   .modal-link-btn--github{color:#e8e8e4;border-color:var(--border);background:var(--surface-2)}
@@ -459,7 +459,7 @@ const CSS = `
   .about-text{font-size:.95rem;color:#999;line-height:1.75;margin-bottom:1rem}
   .about-text strong{color:var(--text)}
   .about-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
-  .about-link{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);padding-bottom:.1rem;transitio[...]
+  .about-link{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);padding-bottom:.1rem;transition:opacity .2s}
   .about-link:hover{opacity:.7}
   .skills-block{display:flex;flex-direction:column;gap:1.5rem}
   .skill-group{display:flex;flex-wrap:wrap;gap:.5rem}
@@ -479,14 +479,14 @@ const CSS = `
   @media(max-width:500px){.form-row{grid-template-columns:1fr}}
   .form-group{display:flex;flex-direction:column;gap:.4rem}
   .form-group label{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.12em;color:var(--text-muted)}
-  .form-group input,.form-group textarea{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.65rem .85rem;color:var(--text);font-family:var(--font-body);font-size:[...]
+  .form-group input,.form-group textarea{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.65rem .85rem;color:var(--text);font-family:var(--font-body);font-size:.9rem;transition:border .2s}
   .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--accent-border)}
   .form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-dim)}
   .type-pills{display:flex;flex-wrap:wrap;gap:.4rem}
-  .type-pill{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.08em;padding:.3rem .7rem;border-radius:20px;border:1px solid var(--border);background:none;color:var(--text-muted);curso[...]
+  .type-pill{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.08em;padding:.3rem .7rem;border-radius:20px;border:1px solid var(--border);background:none;color:var(--text-muted);cursor:pointer;transition:all .2s}
   .type-pill:hover{border-color:var(--accent-border);color:var(--accent)}
   .type-pill--active{background:var(--accent-dim);color:var(--accent);border-color:var(--accent-border)}
-  .form-submit{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.1em;color:var(--bg);background:var(--accent);border:none;padding:.8rem 1.5rem;border-radius:6px;cursor:pointer;transit[...]
+  .form-submit{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.1em;color:var(--bg);background:var(--accent);border:none;padding:.8rem 1.5rem;border-radius:6px;cursor:pointer;transition:opacity .2s}
   .form-submit:hover:not(:disabled){opacity:.85}
   .form-submit:disabled{opacity:.4;cursor:not-allowed}
   .form-success{text-align:center;padding:2rem}
@@ -498,5 +498,5 @@ const CSS = `
   .footer-name{font-family:var(--font-display);font-weight:700;font-size:.9rem}
   .footer-loc{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted)}
   .footer-copy{font-family:var(--font-mono);font-size:.65rem;color:var(--text-dim);margin-left:auto}
-  @media(max-width:600px){.hero-stats{gap:1rem}.stat-num{font-size:1.3rem}.project-card{padding:1.25rem}.nav-cta{display:none}.modal{max-height:95vh}.modal-body{padding:1.25rem}.modal-header{padd[...]
+  @media(max-width:600px){.hero-stats{gap:1rem}.stat-num{font-size:1.3rem}.project-card{padding:1.25rem}.nav-cta{display:none}.modal{max-height:95vh}.modal-body{padding:1.25rem}.modal-header{padding:1.25rem}.writing-card{padding:1.25rem 1.5rem}.about-text{font-size:.88rem}}
 `;
