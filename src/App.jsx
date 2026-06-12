@@ -66,6 +66,32 @@ const PROJECTS = [
     links: { tableau: "https://public.tableau.com/views/BlinkITEcomAnalyticsFindings2023-24/BlinkitAnalyticsDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link", github: "https://github.com/salimarshad07/blinkit-analytics", linkedin: "https://www.linkedin.com/in/salim-arshad" },
     status: "live",
   },
+  {
+    id: "proj_006",
+    num: "006",
+    badge: "FEATURED",
+    category: "Data Journalism",
+    title: "India GDP Fact-Check — The Data Desk",
+    subtitle: "I fact-checked a viral chart that reached millions. Only 1 of 15 countries was accurate.",
+    desc: "A viral 'UNSTOPPABLE INDIA' infographic claimed 7.7% GDP growth with 18 country comparisons. I ran every figure against IMF World Economic Outlook April 2026 data. Built a full Python + SQLite pipeline, SQL analytical queries, and a Tableau dashboard to expose the methodology flaws.",
+    insights: [
+      "Only 1 out of 15 countries in the viral chart was accurate (±0.1%)",
+      "6 countries significantly overstated — Brazil by +1.21%, USA by +0.68%",
+      "Chart mixed MoSPI fiscal year actuals with IMF calendar year forecasts without disclosure",
+      "India IS genuinely the fastest-growing major economy — the data just didn't need embellishment"
+    ],
+    tools: ["Python", "SQLite", "Tableau Public", "IMF WEO Data"],
+    dataSources: [
+      { name: "IMF World Economic Outlook Apr 2026", url: "https://data.imf.org/en/datasets/IMF.RES:WEO" },
+      { name: "MoSPI Press Note June 2026", url: "https://www.mospi.gov.in" }
+    ],
+    links: {
+      tableau: "https://public.tableau.com/views/India_GDP_Factcheck/TheDataDeskIndiaGDPFactCheck",
+      github: "https://github.com/salimarshad07/india-gdp-factcheck",
+      linkedin: "https://www.linkedin.com/in/salimarshad07"
+    },
+    status: "live",
+  },
 ];
 
 const WRITINGS = [
